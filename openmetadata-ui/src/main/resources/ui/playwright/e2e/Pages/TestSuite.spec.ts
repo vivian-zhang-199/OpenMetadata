@@ -135,7 +135,7 @@ test('Test suite tab switching keeps active bundle suite data after stale table 
   await expect(page.getByTestId('test-suite-table')).toBeVisible();
   await expect(page.getByTestId('loader')).toBeVisible();
 
-  await page.getByTestId('bundle-suite-radio-btn').click();
+  await page.locator('label').filter({ hasText: 'Bundle Suites' }).click();
 
   await expect(page.getByTestId(bundleSuiteName)).toBeVisible();
 
